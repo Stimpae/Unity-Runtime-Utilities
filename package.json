@@ -1,0 +1,13 @@
+{
+  "name": "com.stimpae.tgutilities",
+  "version": "1.0.0",
+  "displayName": "TG Utilities",
+  "description": "",
+  "unity": "2022.1",
+  "author": {
+    "name": "Sam Stamp",
+    "email": "samstamp@thundertalegames.uk",
+    "url": "samstamp.co.uk"
+  }
+}
+
