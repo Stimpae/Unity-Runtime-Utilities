@@ -1,0 +1,17 @@
+using UnityEditor;
+using UnityEditor.UIElements;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+#ROOTNAMESPACEBEGIN#
+///<summary>
+/// #NAME#
+///</summary>
+// [CustomPropertyDrawer(typeof(YourAttribute))]
+public class #SCRIPTNAME# : PropertyDrawer{
+    public override VisualElement CreatePropertyGUI(SerializedProperty property){
+        return base.CreatePropertyGUI(property);
+    }
+}
+
+#ROOTNAMESPACEEND#

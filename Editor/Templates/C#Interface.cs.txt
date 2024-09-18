@@ -1,0 +1,11 @@
+using System;
+
+#ROOTNAMESPACEBEGIN#
+///<summary>
+/// #NAME#
+///</summary>
+public interface #SCRIPTNAME#{
+    
+}
+
+#ROOTNAMESPACEEND#

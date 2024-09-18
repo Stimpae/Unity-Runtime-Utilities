@@ -1,0 +1,19 @@
+using UnityEditor;
+using UnityEditor.UIElements;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+#ROOTNAMESPACEBEGIN#
+///<summary>
+/// #NAME#
+///</summary>
+// [CustomEditor(typeof(YourComponentType))]
+public class #SCRIPTNAME# : Editor
+{
+    public override VisualElement CreateInspectorGUI()
+    {
+        
+    }
+}
+
+#ROOTNAMESPACEEND#

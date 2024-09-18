@@ -1,0 +1,14 @@
+using UnityEditor;
+using UnityEngine;
+
+#ROOTNAMESPACEBEGIN#
+///<summary>
+/// #NAME#
+///</summary>
+[System.AttributeUsage(System.AttributeTargets.Field)]
+[Conditional("UNITY_EDITOR")]
+public class #SCRIPTNAME# : PropertyAttribute
+{
+    
+}
+#ROOTNAMESPACEEND#

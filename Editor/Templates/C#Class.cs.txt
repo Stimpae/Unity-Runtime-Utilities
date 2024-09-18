@@ -1,0 +1,10 @@
+using System;
+
+#ROOTNAMESPACEBEGIN#
+///<summary>
+/// #NAME#
+///</summary>
+public class #SCRIPTNAME#{
+    
+}
+#ROOTNAMESPACEEND#

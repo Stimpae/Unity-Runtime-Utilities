@@ -1,0 +1,19 @@
+using UnityEditor;
+using UnityEngine;
+
+#ROOTNAMESPACEBEGIN#
+///<summary>
+/// #NAME#
+///</summary>
+// [CustomEditor(typeof(YourComponentType))]
+public class #SCRIPTNAME# : UnityEditor.Editor{
+    void OnEnable(){
+        #NOTRIM#
+    }
+
+    public override void OnInspectorGUI(){
+        base.OnInspectorGUI();
+    }
+}
+
+#ROOTNAMESPACEEND#
