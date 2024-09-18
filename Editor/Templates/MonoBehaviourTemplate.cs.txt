@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Utility.Project;
 
 #ROOTNAMESPACEBEGIN#
-public class #SCRIPTNAME# : NOTMonobehaviour{
+/// <summary>
+/// #NAME#
+/// </summary>
+public class #SCRIPTNAME# : MonoBehaviour{
    
 }
 #ROOTNAMESPACEEND#
