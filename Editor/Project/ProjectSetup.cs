@@ -19,7 +19,7 @@ namespace TG {
         public static void ImportEssentials() {
             Assets.ImportAsset("Hot Reload Edit Code Without Compiling.unitypackage", "The Naughty Cult/Editor ExtensionsUtilities");
             Assets.ImportAsset("Easy Save - The Complete Save Data Serializer System.unitypackage", "Moodkie/Editor ExtensionsUtilities");
-            Assets.ImportAsset("Pro Camera 2D - The definitive 2D & 2.5D Unity camera plugin.unitypackage","Lus Pedro Fonseca/2D ");
+            Assets.ImportAsset("Pro Camera 2D - The definitive 2D 25D camera plugin for Unity.unitypackage","Lus Pedro Fonseca/2D");
             Assets.ImportAsset("Serialized Dictionary.unitypackage", "ayellowpaper/Editor ExtensionsUtilities");
             Assets.ImportAsset("FMOD for Unity.unitypackage", "FMOD/Editor ExtensionsAudio");
         }
@@ -28,7 +28,7 @@ namespace TG {
         public static void InstallPackages() {
             Packages.InstallPackages(new[] {
                 // just comment out the tg packages you dont need.
-                "git+https://github.com/starikcetin/Eflatun.SceneReference.git",
+                "git+https://github.com/starikcetin/Eflatun.SceneReference.git#4.1.1",
                 "git+https://github.com/Stimpae/TG-Unity-Editor-Toolkit.git",
                 "git+https://github.com/Stimpae/TG-Unity-Utilities.git",
                 "git+https://github.com/Stimpae/TG-Unity-Game-Management.git",
@@ -40,12 +40,13 @@ namespace TG {
 
         [MenuItem("Tools/Setup/Create Folders")]
         public static void CreateFolders() {
-            Folders.Create("Assets", 
+            Folders.Create("", 
                 "Editor", "Fonts", "Materials", "Plugins", "Prefabs", "Resources", "Scripts", "Settings", "Shaders", "Sprites");
             Refresh();
-            Folders.Move("Assets", "Scenes");
-            Folders.Move("Assets", "Settings");
-            Refresh();
+            
+            MoveAsset("Assets/InputSystem_Actions.inputactions", "Assets/Settings/InputSystem_Actions.inputactions");
+            MoveAsset("Assets/DefaultVolumeProfile.asset", "Assets/Settings/DefaultVolumeProfile.asset");
+           
             Refresh();
         }
 
