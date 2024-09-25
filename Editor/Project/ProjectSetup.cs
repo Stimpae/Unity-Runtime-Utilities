@@ -76,28 +76,28 @@ namespace TG.Utilities {
         }
 
         private static class Packages {
-            static AddRequest request;
-            static Queue<string> packagesToInstall = new Queue<string>();
+            static AddRequest _request;
+            static Queue<string> _packagesToInstall = new Queue<string>();
 
             public static void InstallPackages(string[] packages) {
                 foreach (var package in packages) {
-                    packagesToInstall.Enqueue(package);
+                    _packagesToInstall.Enqueue(package);
                 }
 
-                if (packagesToInstall.Count > 0) {
+                if (_packagesToInstall.Count > 0) {
                     StartNextPackageInstallation();
                 }
             }
 
             static async void StartNextPackageInstallation() {
-                request = Client.Add(packagesToInstall.Dequeue());
+                _request = Client.Add(_packagesToInstall.Dequeue());
 
-                while (!request.IsCompleted) await Task.Delay(10);
+                while (!_request.IsCompleted) await Task.Delay(10);
 
-                if (request.Status == StatusCode.Success) Debug.Log("Installed: " + request.Result.packageId);
-                else if (request.Status >= StatusCode.Failure) Debug.LogError(request.Error.message);
+                if (_request.Status == StatusCode.Success) Debug.Log("Installed: " + _request.Result.packageId);
+                else if (_request.Status >= StatusCode.Failure) Debug.LogError(_request.Error.message);
 
-                if (packagesToInstall.Count > 0) {
+                if (_packagesToInstall.Count > 0) {
                     await Task.Delay(1000);
                     StartNextPackageInstallation();
                 }

@@ -8,7 +8,7 @@ using UnityEngine;
 /// Utility class for creating new scripts.
 /// </summary>
 public static class ScriptTemplateUtils {
-    private const string TEMPLATE_PATH = "Packages/com.stimpae.tgutilities/Editor/Templates/";
+    private const string TEMPLATE_PATH = "Packages/com.stimpae.utilities/Editor/Templates/";
 
     private static void CreateScript(string templatePath, string fileName) {
         ProjectWindowUtil.CreateScriptAssetFromTemplateFile(templatePath, fileName);
