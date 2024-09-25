@@ -13,7 +13,7 @@ using static UnityEditor.AssetDatabase;
 // Taken from adammyhre's Gist, with some modifications to suit my needs
 // https://gist.github.com/adammyhre/ce4009edccc420a35237419b5ea050e1
 
-namespace TG {
+namespace TG.Utilities {
     public static class ProjectSetup {
         [MenuItem("Tools/Setup/Import Essential Assets")]
         public static void ImportEssentials() {
