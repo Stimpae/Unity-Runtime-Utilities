@@ -3,7 +3,8 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace TG.Utilities.Bootstrapper {
+namespace TG.Utilities {
+    
     /// <summary>
     /// Handles the initialization of the game and the persistent objects.
     /// There should be only one instance of this class in the game, it should be present in the BOOT scene.
@@ -14,6 +15,7 @@ namespace TG.Utilities.Bootstrapper {
         
         public UnityEvent onBootstrapperInitializedEvent;
         public event UnityAction OnBootstrapperInitialized;
+        
         
         /// <summary>
         /// Initializes the Bootstrapper.

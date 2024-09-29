@@ -8,13 +8,12 @@ namespace TG.Utilities {
     public class FrequencyTimer : Timer {
         public int TicksPerSecond { get; private set; }
 
-        private event Action OnTick;
+        public event Action OnTick;
+        private float m_timeThreshold;
 
-        float m_timeThreshold;
-
-        public FrequencyTimer(int ticksPerSecond, Action onTick) : base(0) {
+        public FrequencyTimer(int ticksPerSecond, Action onTick = null) : base(0) {
             CalculateTimeThreshold(ticksPerSecond);
-            OnTick = onTick;
+            if (onTick != null) OnTick = onTick;
         }
 
         public override void Tick() {
