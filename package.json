@@ -1,12 +1,12 @@
 {
-  "name": "com.stimpae.utilities",
+  "name": "com.stimpae.runtimeutilities",
   "version": "1.0.2",
-  "displayName": "TG Utilities",
+  "displayName": "Unity Runtime Utilities",
   "description": "",
   "unity": "2022.1",
   "author": {
-    "name": "Sam Stamp",
-    "email": "samstamp@thundertalegames.uk",
+    "name": "Stimpae",
+    "email": "",
     "url": "samstamp.co.uk"
   }
 }

@@ -1,6 +1,6 @@
 {
-    "name": "TG.Utilities.Editor",
-    "rootNamespace": "",
+    "name": "RuntimeUtilities.Editor",
+    "rootNamespace": "RuntimeUtilities",
     "references": ["GUID:48a606faccb04f05bfb035c4ab72ab6a"],
     "includePlatforms": [
         "Editor"
