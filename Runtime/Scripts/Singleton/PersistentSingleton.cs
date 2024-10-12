@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.Singleton {
     /// <summary>
     /// A persistent singleton class for Unity components.
     /// Ensures that only one instance of the component exists in the scene and persists across scene loads.

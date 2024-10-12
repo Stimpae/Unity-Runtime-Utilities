@@ -1,6 +1,7 @@
 ﻿using System;
+using RuntimeUtilities.SerializableGUID;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.Extensions {
     /// <summary>
     /// Provides extension methods for the Guid class.
     /// </summary>

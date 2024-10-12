@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.SerializableType {
     [Serializable]
     public class SerializableType : ISerializationCallbackReceiver {
         [SerializeField] string assemblyQualifiedName = string.Empty;

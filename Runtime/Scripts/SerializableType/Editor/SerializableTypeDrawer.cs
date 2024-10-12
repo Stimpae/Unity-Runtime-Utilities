@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.SerializableType.Editor {
     [CustomPropertyDrawer(typeof(SerializableType))]
     public class SerializableTypeDrawer : PropertyDrawer{
         private TypeFilterAttribute m_typeFilter;

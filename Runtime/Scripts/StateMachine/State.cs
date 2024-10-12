@@ -1,4 +1,4 @@
-﻿namespace TG.Utilities {
+﻿namespace RuntimeUtilities.StateMachine {
     /// <summary>
     /// Empty state class to be used as a base for all states
     /// </summary>

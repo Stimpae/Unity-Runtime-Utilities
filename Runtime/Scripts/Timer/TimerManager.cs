@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using RuntimeUtilities.Extensions;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.Timer {
     /// <summary>
     /// Manages the registration, deregistration, and updating of timers.
     /// </summary>

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.Timer {
     /// <summary>
     /// Timer that counts down from a specific value to zero.
     /// </summary>

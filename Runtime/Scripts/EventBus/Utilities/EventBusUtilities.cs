@@ -4,7 +4,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.EventBus {
     public static class EventBusUtilities {
         public static IReadOnlyList<Type> EventTypes { get; set; }
         public static IReadOnlyList<Type> EventBusTypes { get; set; }

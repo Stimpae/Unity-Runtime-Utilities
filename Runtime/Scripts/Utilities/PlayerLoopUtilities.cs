@@ -3,7 +3,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.LowLevel;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities {
     /// <summary>
     /// Utility class for managing Unity's PlayerLoop systems.
     /// </summary>

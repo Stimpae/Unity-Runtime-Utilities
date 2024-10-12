@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.Timer {
     /// <summary>
     /// Timer that ticks at a specific frequency. (N times per second)
     /// </summary>

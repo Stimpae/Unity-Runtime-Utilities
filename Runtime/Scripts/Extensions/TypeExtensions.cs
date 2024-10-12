@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.Extensions {
     public static class TypeExtensions {
         /// <summary>
         /// Checks if a given type inherits or implements a specified base type.

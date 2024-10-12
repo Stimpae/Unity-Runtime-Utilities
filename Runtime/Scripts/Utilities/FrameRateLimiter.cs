@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities {
     /// <summary>
     /// This class is used to limit the frame rate of the game.
     /// Useful for testing on different devices and catching performance issues and frame rate dependent bugs.

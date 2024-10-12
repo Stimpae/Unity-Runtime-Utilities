@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.SerializableGUID {
     [DisallowMultipleComponent]
     public class GuidComponent : MonoBehaviour {
         [SerializeField] private SerializableGuid guid = SerializableGuid.NewGuid();

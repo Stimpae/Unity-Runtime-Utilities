@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.Bootstrapper.Editor {
     /// <summary>
     /// Auto-loads a bootstrap screen (first scene in Build Settings) while working in the Editor.
     /// Adds menu items to toggle behavior.
@@ -12,8 +12,8 @@ namespace TG.Utilities {
     public class EditorBootstrapper {
         private const string K_PREVIOUS_SCENE = "PreviousScene";
         private const string K_SHOULD_LOAD_BOOTSTRAP = "LoadBootstrapScene";
-        private const string K_LOAD_BOOTSTRAP_MENU = "Tools/TG/Load Bootstrap Scene On Play";
-        private const string K_DONT_LOAD_BOOTSTRAP_MENU = "Tools/TG/Don't Load Bootstrap Scene On Play";
+        private const string K_LOAD_BOOTSTRAP_MENU = "Tools/Utilities/Load Bootstrap Scene On Play";
+        private const string K_DONT_LOAD_BOOTSTRAP_MENU = "Tools/Utilities/Don't Load Bootstrap Scene On Play";
 
         private static string BootstrapScene => EditorBuildSettings.scenes[0].path;
 

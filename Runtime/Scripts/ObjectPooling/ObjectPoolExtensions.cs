@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.ObjectPooling {
     /// <summary>
     /// Provides extension methods for the ObjectPool class to manage pooling operations on GameObjects.
     /// </summary>

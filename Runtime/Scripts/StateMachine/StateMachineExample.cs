@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.StateMachine {
     public enum TestingEnum {
         A,
         B,

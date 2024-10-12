@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.SerializableGUID.Editor {
     [CustomPropertyDrawer(typeof(SerializableGuid))]
     public class SerializableGuidDrawer : PropertyDrawer {
         private const float Y_SEP = 20;

@@ -1,13 +1,14 @@
-﻿using UnityEditor;
+﻿
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.LowLevel;
 using UnityEngine.PlayerLoop;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.Timer {
     /// <summary>
     /// Handles the initialization and cleanup of the TimerManager in the Unity PlayerLoop.
     /// </summary>
-    public static class TimerBootstrapper {
+    public static class TimerBoot {
         private static PlayerLoopSystem _timerSystem;
 
         /// <summary>

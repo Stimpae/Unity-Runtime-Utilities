@@ -1,4 +1,4 @@
-﻿namespace TG.Utilities {
+﻿namespace RuntimeUtilities.EventBus {
     public interface IEvent {
         
     }

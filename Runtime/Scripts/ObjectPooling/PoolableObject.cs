@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.ObjectPooling {
     /// <summary>
     /// This class is used to provide a callback to objects that are pooled.
     /// It is added automatically to objects that are pooled

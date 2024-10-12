@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.EventBus {
     public static class EventBus<T> where T : IEvent {
         //in this case we specifically _want_ a static member in a generic type. We want a different bindings-hashSet in each instance of different close constructed type (https://www.jetbrains.com/help/resharper/StaticMemberInGenericType.html)
         // ReSharper disable once StaticMemberInGenericType

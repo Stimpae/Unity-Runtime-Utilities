@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.Extensions {
     /// <summary>
     /// Provides extension methods for List types
     /// </summary>

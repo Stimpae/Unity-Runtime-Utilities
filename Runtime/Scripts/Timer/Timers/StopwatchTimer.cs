@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.Timer {
     /// <summary>
     /// Timer that counts up from zero to infinity.  Great for measuring durations.
     /// </summary>

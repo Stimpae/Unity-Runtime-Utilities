@@ -1,7 +1,8 @@
 ﻿using System;
+using RuntimeUtilities.Extensions;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.SerializableType {
     public class TypeFilterAttribute : PropertyAttribute {
         public Func<Type, bool> Filter { get; }
         public TypeFilterAttribute(Type filterType) {

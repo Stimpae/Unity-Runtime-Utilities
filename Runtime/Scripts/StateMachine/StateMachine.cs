@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using RuntimeUtilities.Timer;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.StateMachine {
     /// <summary>
     /// A generic state machine class that manages state transitions and events.
     /// </summary>
@@ -121,7 +122,7 @@ namespace TG.Utilities {
             }
 
             if (ShouldTriggerEvents) {
-                EventBus<StateChangedEvent<T>>.Raise(new StateChangedEvent<T>(this));
+                EventBus.EventBus<StateChangedEvent<T>>.Raise(new StateChangedEvent<T>(this));
             }
         }
     }

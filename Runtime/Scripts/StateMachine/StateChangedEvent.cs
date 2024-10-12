@@ -1,7 +1,8 @@
 ﻿using System;
+using RuntimeUtilities.EventBus;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.StateMachine {
     public struct StateChangedEvent<T> : IEvent where T : struct, IComparable, IConvertible, IFormattable{
         public GameObject owner;
         public StateMachine<T> targetStateMachine;

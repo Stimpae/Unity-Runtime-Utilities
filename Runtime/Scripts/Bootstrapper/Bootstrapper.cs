@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using RuntimeUtilities.Singleton;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.Bootstrapper {
     
     /// <summary>
     /// Handles the initialization of the game and the persistent objects.

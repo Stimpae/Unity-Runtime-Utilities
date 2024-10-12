@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.EventBus {
     /// <summary>
     /// Provides methods to interact with predefined assemblies.
     /// </summary>

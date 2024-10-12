@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.Timer {
     /// <summary>
     /// Abstract base class for a timer that can be started, stopped, and reset.
     /// </summary>

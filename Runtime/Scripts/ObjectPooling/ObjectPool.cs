@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace TG.Utilities {
+namespace RuntimeUtilities.ObjectPooling {
     /// <summary>
     /// Manages a pool of reusable GameObjects to optimize performance by reducing the need for frequent instantiation and destruction.
     /// </summary>
