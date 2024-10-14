@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace RuntimeUtilities.Bootstrapper {
-    
     /// <summary>
     /// Handles the initialization of the game and the persistent objects.
     /// There should be only one instance of this class in the game, it should be present in the BOOT scene.

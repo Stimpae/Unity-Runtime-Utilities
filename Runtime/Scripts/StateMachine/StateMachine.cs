@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using RuntimeUtilities.Timer;
 using UnityEngine;
 
 namespace RuntimeUtilities.StateMachine {
@@ -13,12 +12,7 @@ namespace RuntimeUtilities.StateMachine {
         /// Gets or sets a value indicating whether events should be triggered on state changes.
         /// </summary>
         public bool ShouldTriggerEvents { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the state machine should update.
-        /// </summary>
-        public bool ShouldUpdate { get; set; }
-
+        
         /// <summary>
         /// Gets or sets the owner of the state machine.
         /// </summary>
@@ -39,8 +33,7 @@ namespace RuntimeUtilities.StateMachine {
         /// </summary>
         public event Action<T> OnStateChange;
 
-        private FrequencyTimer m_updateTimer;
-        private readonly Dictionary<T, State> m_states = new();
+        private readonly Dictionary<T, IState> m_states = new();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StateMachine{T}"/> class.
@@ -48,6 +41,13 @@ namespace RuntimeUtilities.StateMachine {
         /// <param name="owner">The owner of the state machine.</param>
         public StateMachine(GameObject owner) {
             Owner = owner;
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        public void UpdateState() {
+            if (m_states.TryGetValue(CurrentState, out var state)) state.OnUpdate();
         }
 
         /// <summary>
@@ -58,45 +58,15 @@ namespace RuntimeUtilities.StateMachine {
             ShouldTriggerEvents = true;
             return this;
         }
-
-        /// <summary>
-        /// Enables updates for the state machine and sets the initial state.
-        /// </summary>
-        /// <param name="state">The initial state.</param>
-        /// <param name="stateObject">The state object associated with the initial state.</param>
-        /// <returns>The current instance of the state machine.</returns>
-        public StateMachine<T> WithUpdates(T state, State stateObject) {
-            ShouldUpdate = true;
-            CurrentState = state;
-            AddState(CurrentState, stateObject);
-            m_states[CurrentState].OnEnter();
-            m_updateTimer ??= new FrequencyTimer(30);
-            m_updateTimer.OnTick += () => m_states[CurrentState].OnUpdate();
-            m_updateTimer.Start();
-            return this;
-        }
-
+        
         /// <summary>
         /// Adds a state to the state machine.
         /// </summary>
         /// <param name="state">The state to add.</param>
         /// <param name="stateObject">The state object associated with the state.</param>
-        /// <returns>The current instance of the state machine.</returns>
-        public StateMachine<T> WithState(T state, State stateObject) {
-            AddState(state, stateObject);
-            if (EqualityComparer<T>.Default.Equals(state, CurrentState)) m_states[state].OnEnter();
-            return this;
-        }
-
-        /// <summary>
-        /// Adds a state to the state machine.
-        /// </summary>
-        /// <param name="state">The state to add.</param>
-        /// <param name="stateObject">The state object associated with the state.</param>
-        public void AddState(T state, State stateObject) {
-            if (!m_states.TryAdd(state, stateObject)) {
-                Debug.LogWarning($"State {state} already exists in the state machine.");
-            }
+        public void AddState(T state, IState stateObject) {
+            if (m_states.TryAdd(state, stateObject)) stateObject.Owner = Owner;
+            else Debug.LogWarning($"State {state} already exists in the state machine.");
         }
 
         /// <summary>
@@ -111,19 +81,11 @@ namespace RuntimeUtilities.StateMachine {
             OnStateChange?.Invoke(newState);
 
             if (m_states.Count != 0) {
-                if (m_states.TryGetValue(PreviousState, out var previousState)) {
-                    previousState.OnExit();
-                    if (ShouldUpdate) m_updateTimer.OnTick -= previousState.OnUpdate;
-                }
-
-                if (m_states.TryGetValue(CurrentState, out var currentState)) {
-                    currentState.OnEnter();
-                }
+                if (m_states.TryGetValue(PreviousState, out var previousState)) previousState.OnExit();
+                if (m_states.TryGetValue(CurrentState, out var currentState)) currentState.OnEnter();
             }
 
-            if (ShouldTriggerEvents) {
-                EventBus.EventBus<StateChangedEvent<T>>.Raise(new StateChangedEvent<T>(this));
-            }
+            if (ShouldTriggerEvents) EventBus.EventBus<StateChangedEvent<T>>.Raise(new StateChangedEvent<T>(this));
         }
     }
 }
