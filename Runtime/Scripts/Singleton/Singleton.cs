@@ -14,10 +14,15 @@ namespace RuntimeUtilities.Singleton {
         public static T Instance {
             get {
                 if (instance == null) {
-                    instance = FindAnyObjectByType<T>() ?? new GameObject(typeof(T).Name + " Auto-Generated").AddComponent<T>();
+                    instance = FindFirstObjectByType<T>() ?? CreateNewInstance();
                 }
                 return instance;
             }
+        }
+        
+        private static T CreateNewInstance() {
+            var go = new GameObject(typeof(T).Name + " Auto-Generated");
+            return go.AddComponent<T>();
         }
         
         protected virtual void Awake() {

@@ -23,15 +23,18 @@ namespace RuntimeUtilities.Extensions {
             return false;
         }
         
-        static Type ResolveGenericType(Type type) {
+        public static Type ResolveGenericType(Type type) {
             if (type is not { IsGenericType: true }) return type;
 
             var genericType = type.GetGenericTypeDefinition();
             return genericType != type ? genericType : type;
         }
 
-        static bool HasAnyInterfaces(Type type, Type interfaceType) {
+        public static bool HasAnyInterfaces(Type type, Type interfaceType) {
             return type.GetInterfaces().Any(i => ResolveGenericType(i) == interfaceType);
         }
+        
+        // from the type try and retreive the actual struct reference type
+        
     }
 }

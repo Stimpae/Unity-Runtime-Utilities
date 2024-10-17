@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using RuntimeUtilities.Singleton;
 using UnityEngine;
@@ -9,22 +10,30 @@ namespace RuntimeUtilities.Bootstrapper {
     /// Handles the initialization of the game and the persistent objects.
     /// There should be only one instance of this class in the game, it should be present in the BOOT scene.
     /// </summary>
-    public class Bootstrapper : PersistentSingleton<Bootstrapper> {
+    public class Bootstrapper : Singleton<Bootstrapper> {
         // List of persistent objects that will be instantiated at the start of the game and available from the start to the end of the game
         [SerializeField] private List<GameObject> persistentObjects = new List<GameObject>();
         
         public UnityEvent onBootstrapperInitializedEvent;
         public event UnityAction OnBootstrapperInitialized;
         
+        protected override void Awake() {
+            base.Awake();
+        }
         
         /// <summary>
-        /// Initializes the Bootstrapper.
-        /// This method is called before the first scene is loaded.
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        private static async void Init() {
+        protected static async void InitBeforeSceneLoad() {
+            // Load first scene?
+        }
+
+
+        /// <summary>
+        /// </summary>
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        private static async void InitAfterSceneLoad() {
             await LoadPersistentObjects();
-            
             Instance.OnBootstrapperInitialized?.Invoke();
             Instance.onBootstrapperInitializedEvent?.Invoke();
         }

@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [1.1.0] - 17/10/2024
+### Added
+- Added Sequence Framework
+- Added Abstract Singleton
+- Added SerializedReference Extensions package in exchange for serialized types
+
+### Removed
+- Removed Serializable Types
+
 ## [1.0.2] - 25/09/2024
 ### Added
 - Added State Machine

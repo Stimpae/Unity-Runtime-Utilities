@@ -1,7 +1,11 @@
 {
     "name": "RuntimeUtilities",
     "rootNamespace": "RuntimeUtilities",
-    "references": [],
+    "references": [
+        "GUID:49b49c76ee64f6b41bf28ef951cb0e50",
+        "GUID:10bb741dc5a74aec8b5644a96970c79d",
+        "GUID:c67a7526888947f581b299f7a31491be"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

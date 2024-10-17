@@ -1,7 +1,7 @@
 {
     "name": "RuntimeUtilities.Editor",
     "rootNamespace": "RuntimeUtilities",
-    "references": ["GUID:48a606faccb04f05bfb035c4ab72ab6a"],
+    "references": ["GUID:48a606faccb04f05bfb035c4ab72ab6a","GUID:c67a7526888947f581b299f7a31491be"],
     "includePlatforms": [
         "Editor"
     ],

@@ -15,7 +15,8 @@ namespace RuntimeUtilities.Singleton {
         public static T Instance {
             get {
                 if (instance == null) {
-                    instance = FindAnyObjectByType<T>() ?? CreateNewInstance();
+                    // try and find an existing instance in game
+                    instance = FindFirstObjectByType<T>() ?? CreateNewInstance();
                 }
                 return instance;
             }
