@@ -8,6 +8,11 @@
     "name": "Stimpae",
     "email": "",
     "url": "samstamp.co.uk"
-  }
+  },
+  
+    "dependencies": {
+      "com.mackysoft.serializereference-extensions": "1.4.0",
+      "com.stimpae.editorutilities": "1.0.1"
+    }
 }
 
